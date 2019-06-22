@@ -1,0 +1,67 @@
+mat-form-field {
+	width:100%;
+}
+mat-spinner {
+	margin:auto;
+}
+
+.alig {
+	margin-top: 20px;
+	margin-bottom:40px; 
+	margin-left:38%;
+	font-size:30px;
+	font-weight: bold;
+}
+
+.alig1 {
+	margin-top: 15px;
+	margin-left: 30px;
+	font-weight: bold;
+}
+input[type="file"]{
+	visibility: hidden;
+}
+.image-preview {
+	height: 5rem;
+	margin: 1rem 0;
+}
+.image-preview img {
+	height: 100%;
+}
+.upload {
+	width:100%;
+	margin-left:43%;
+}
+.add {
+	width:100%;
+	text-align: center;
+	margin-top: 20px;
+}
+.btn {
+	border:none;
+	margin-bottom: 20px;
+
+}
+.btn:hover {
+	cursor:pointer;
+	border:none;
+}
+.btn:focus {
+	outline:none;
+}
+.foot {
+	display: flex;
+	margin-left:75%; 
+}
+.delete {
+	height:20px;width: 20px;margin-top: 20px;
+}
+.delete:hover {
+	cursor: pointer;
+}
+@media only screen and (max-width: 968px) {
+  /* For desktop: */
+  .alig {
+  	margin-left: 34%;
+  }
+}

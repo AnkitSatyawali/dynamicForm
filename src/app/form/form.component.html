@@ -1,0 +1,54 @@
+<div  *ngFor="let form of formArray;let i=index">
+<mat-card *ngIf = "flagArray[i]" >
+	<mat-card-title class="alig">ENROLLMENT</mat-card-title>
+	<form (submit)="onSignup(SignupForm,i)" #SignupForm="ngForm" >
+		<mat-form-field appearance="outline">
+			<mat-label>Username</mat-label>
+			<input matInput name="username" [(ngModel)]="form.username" type="username" #usernameInput="ngModel" required username>
+			<mat-error *ngIf="usernameInput.invalid">Please enter a username</mat-error>
+		</mat-form-field>
+		<mat-form-field appearance="outline">
+		  <mat-label>Phone No.</mat-label>
+          <input matInput name="phone" [(ngModel)]="form.phone" #phoneInput="ngModel" type="number"required phone>
+           <mat-error *ngIf="phoneInput.invalid">Please enter a valid phoneNo.</mat-error>
+
+        </mat-form-field>
+		<mat-form-field appearance="outline">
+		<mat-label>Email ID</mat-label>
+		<input matInput name="email" [(ngModel)]="form.email" type="email"  #emailInput="ngModel" required email>
+		<mat-error *ngIf="emailInput.invalid">Please enter a valid emaill</mat-error>
+		</mat-form-field>
+		<mat-form-field appearance="outline">
+			<mat-label>College</mat-label>
+		    <input type = "college" name="college" [(ngModel)]="form.college" matInput placeholder="Password" #passwordInput="ngModel" required>
+		     <mat-error *ngIf="passwordInput.invalid">Please enter college Name</mat-error>
+	    </mat-form-field>
+	    <mat-form-field appearance="outline">
+	    	<mat-label>Year</mat-label>
+		    <mat-select disableRipple name="year" [(ngModel)]="form.year"  [formControl]="yearsControl" required>
+		      <mat-option >Year</mat-option>
+		      <mat-option *ngFor="let year of years"    [value]="year">
+                  {{year}}
+              </mat-option>
+		    </mat-select>
+		    <mat-error *ngIf="yearsControl.hasError('required')">Please choose an year</mat-error>
+		</mat-form-field>
+		<div class="upload">
+			<button mat-stroked-button type="button" (click)="filePicker.click()">Pick Image</button>
+			<input type="file" #filePicker accept="image/*" (change)="onImagePicked($event.target.files)">
+		</div>
+		<img *ngIf="imgUrl!=null" [src]="imgUrl" style="height:100px;width:200px;">
+		<div class="foot">
+			<img class="delete" (click)="removeForm(i)" *ngIf="!flagArray2[i]" src="../assets/delete.svg">
+	       <button mat-raised-button class="alig1" color="primary" *ngIf="flagArray2[i]"type="submit"
+	       [disabled]="SignupForm.invalid || yearsControl.hasError('required')">Save And Next</button>
+	    </div>
+	</form>
+</mat-card>
+<mat-card *ngIf="!flagArray[i]">
+   <mat-card-title>Form is submitted</mat-card-title>
+</mat-card>
+<div class="add">
+		<button class="btn" (click)="addNewform(i)"><img src="../assets/add.svg"></button>
+	</div>
+</div>

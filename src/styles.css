@@ -1,0 +1,14 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+body 
+{
+	padding : 2em 15em;
+	background:lightgray;
+	
+}
+
+@media only screen and (max-width: 968px) {
+  /* For desktop: */
+  body {
+  	padding: 0;
+  }
+}

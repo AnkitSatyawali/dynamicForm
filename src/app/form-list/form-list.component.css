@@ -1,0 +1,15 @@
+.add {
+	width:100%;
+	text-align: center;
+	margin-top: 20px;
+}
+.btn {
+	border:none;
+}
+.btn:hover {
+	cursor:pointer;
+	border:none;
+}
+.btn:focus {
+	outline:none;
+}
